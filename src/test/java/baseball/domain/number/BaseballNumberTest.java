@@ -1,5 +1,6 @@
 package baseball.domain.number;
 
+import baseball.contant.ExceptionMessage;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -29,7 +30,7 @@ class BaseballNumberTest {
     void generateBaseballNumberExceptionTest(int number) {
         Assertions.assertThatIllegalArgumentException()
                 .isThrownBy(() -> BaseballNumber.from(number))
-                .withMessageContaining("1 ~ 9 사이의 숫자만 유효합니다.");
+                .withMessageContaining(ExceptionMessage.INVALID_BASEBALL_NUMBER);
     }
 
     @ParameterizedTest

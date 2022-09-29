@@ -1,5 +1,6 @@
 package baseball.domain.number;
 
+import baseball.contant.ExceptionMessage;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,7 @@ class BaseballNumbersTest {
         // when, then
         Assertions.assertThatIllegalArgumentException()
                 .isThrownBy(() -> BaseballNumbers.from(generator.generate()))
-                .withMessageContaining("유효하지 않은 크기입니다.");
+                .withMessageContaining(ExceptionMessage.INVALID_BASEBALL_NUMBERS_SIZE);
     }
 
     @Test
@@ -27,7 +28,7 @@ class BaseballNumbersTest {
         // when, then
         Assertions.assertThatIllegalArgumentException()
                 .isThrownBy(() -> BaseballNumbers.from(generator.generate()))
-                .withMessageContaining("유효하지 않은 크기입니다.");
+                .withMessageContaining(ExceptionMessage.INVALID_BASEBALL_NUMBERS_SIZE);
     }
 
     @Test
