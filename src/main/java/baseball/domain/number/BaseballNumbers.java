@@ -25,4 +25,12 @@ public class BaseballNumbers {
     public int size() {
         return this.values.size();
     }
+
+    public BaseballNumber getBaseBallNumberByIndex(int index) {
+        return this.values.get(index);
+    }
+
+    public boolean contains(BaseballNumber baseballNumber) {
+        return this.values.contains(baseballNumber);
+    }
 }
