@@ -1,6 +1,6 @@
 package baseball.domain.number;
 
-import baseball.contant.BaseballNumbersConstant;
+import baseball.contant.BaseballConstant;
 import baseball.contant.ExceptionMessage;
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class BaseballNumbers {
     }
 
     private static void validateNumbers(List<BaseballNumber> values) {
-        if (values.size() != BaseballNumbersConstant.BASEBALL_NUMBERS_SIZE) {
+        if (values.size() != BaseballConstant.BASEBALL_NUMBERS_SIZE) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_BASEBALL_NUMBERS_SIZE);
         }
     }

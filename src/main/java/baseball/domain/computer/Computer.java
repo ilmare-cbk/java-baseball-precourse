@@ -14,4 +14,8 @@ public class Computer {
         BaseballNumbers baseballNumbers = BaseballNumbers.from(baseballNumbersGenerator.generate());
         return new Computer(baseballNumbers);
     }
+
+    public BaseballNumbers getBaseballNumbers() {
+        return baseballNumbers;
+    }
 }

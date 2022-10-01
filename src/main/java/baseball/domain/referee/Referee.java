@@ -1,6 +1,6 @@
 package baseball.domain.referee;
 
-import baseball.contant.BaseballNumbersConstant;
+import baseball.contant.BaseballConstant;
 import baseball.domain.number.BaseballNumber;
 import baseball.domain.number.BaseballNumbers;
 
@@ -22,7 +22,7 @@ public class Referee {
 
     private int strike(BaseballNumbers computerNumbers, BaseballNumbers userNumbers) {
         int strike = 0;
-        for (int i = 0; i < BaseballNumbersConstant.BASEBALL_NUMBERS_SIZE; i++) {
+        for (int i = 0; i < BaseballConstant.BASEBALL_NUMBERS_SIZE; i++) {
             BaseballNumber computerNumber = computerNumbers.getBaseBallNumberByIndex(i);
             BaseballNumber userNumber = userNumbers.getBaseBallNumberByIndex(i);
             strike += judgeStrike(computerNumber, userNumber);
@@ -39,7 +39,7 @@ public class Referee {
 
     private int ball(BaseballNumbers computerNumbers, BaseballNumbers userNumbers) {
         int ball = 0;
-        for (int i = 0; i < BaseballNumbersConstant.BASEBALL_NUMBERS_SIZE; i++) {
+        for (int i = 0; i < BaseballConstant.BASEBALL_NUMBERS_SIZE; i++) {
             BaseballNumber computerNumber = computerNumbers.getBaseBallNumberByIndex(i);
             BaseballNumber userNumber = userNumbers.getBaseBallNumberByIndex(i);
             ball += judgeBall(computerNumbers, computerNumber, userNumber);
@@ -56,5 +56,9 @@ public class Referee {
 
     public Hint getHint() {
         return hint;
+    }
+
+    public boolean onPlay() {
+        return this.hint.getStrike() != BaseballConstant.BASEBALL_END_STRIKE_COUNT;
     }
 }

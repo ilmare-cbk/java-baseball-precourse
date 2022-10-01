@@ -1,6 +1,6 @@
 package baseball.domain.number;
 
-import baseball.contant.BaseballNumbersConstant;
+import baseball.contant.BaseballConstant;
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -13,7 +13,7 @@ public class DefaultNumberGenerateStrategy implements NumberGenerateStrategy {
     public List<BaseballNumber> generate() {
         Set<BaseballNumber> numbers = new LinkedHashSet<>();
 
-        while (numbers.size() < BaseballNumbersConstant.BASEBALL_NUMBERS_SIZE) {
+        while (numbers.size() < BaseballConstant.BASEBALL_NUMBERS_SIZE) {
             int number = pickNumber();
             numbers.add(BaseballNumber.from(number));
         }
@@ -23,8 +23,8 @@ public class DefaultNumberGenerateStrategy implements NumberGenerateStrategy {
 
     private int pickNumber() {
         return Randoms.pickNumberInRange(
-                BaseballNumbersConstant.BASEBALL_NUMBER_MIN,
-                BaseballNumbersConstant.BASEBALL_NUMBER_MAX
+                BaseballConstant.BASEBALL_NUMBER_MIN,
+                BaseballConstant.BASEBALL_NUMBER_MAX
         );
     }
 }

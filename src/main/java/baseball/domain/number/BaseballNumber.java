@@ -1,6 +1,6 @@
 package baseball.domain.number;
 
-import baseball.contant.BaseballNumbersConstant;
+import baseball.contant.BaseballConstant;
 import baseball.contant.ExceptionMessage;
 import java.util.Objects;
 
@@ -17,8 +17,7 @@ public class BaseballNumber {
     }
 
     private static void validateNumber(int number) {
-        if (number < BaseballNumbersConstant.BASEBALL_NUMBER_MIN
-                || number > BaseballNumbersConstant.BASEBALL_NUMBER_MAX) {
+        if (number < BaseballConstant.BASEBALL_NUMBER_MIN || number > BaseballConstant.BASEBALL_NUMBER_MAX) {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_BASEBALL_NUMBER);
         }
     }
