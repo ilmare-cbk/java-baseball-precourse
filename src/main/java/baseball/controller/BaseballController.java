@@ -1,6 +1,5 @@
 package baseball.controller;
 
-import baseball.domain.computer.Computer;
 import baseball.domain.number.BaseballNumbers;
 import baseball.domain.number.BaseballNumbersGenerator;
 import baseball.domain.referee.Referee;
@@ -21,12 +20,12 @@ public class BaseballController {
     }
 
     public void play() {
-        Computer computer = Computer.createBy(baseballNumbersGenerator);
+        BaseballNumbers computerNumbers = BaseballNumbers.from(baseballNumbersGenerator.generate());
         Referee referee = Referee.create();
 
         while (referee.onPlay()) {
             BaseballNumbers userNumbers = baseballUserInput.getUserNumbers();
-            referee.judge(computer.getBaseballNumbers(), userNumbers);
+            referee.judge(computerNumbers, userNumbers);
             baseballView.printJudgement(referee.getHint());
         }
         continueGame();
